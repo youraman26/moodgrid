@@ -1,0 +1,6 @@
+{
+  "name": "MoodGrid",
+  "description": "Generate. Curate. Share. Visual-first, premium AI-powered editorial moodboard generation platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
