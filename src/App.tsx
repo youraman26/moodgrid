@@ -2199,44 +2199,41 @@ export default function App() {
               </div>
 
               {/* COMPONENT: BOTTOM NAVIGATION TAB BAR */}
-              <div className="h-[83px] bg-white border-t border-zinc-150 flex items-center justify-around px-4 pb-5 shrink-0 z-30">
+              <div className="h-[83px] bg-white/95 backdrop-blur-md border-t border-zinc-150 flex items-center justify-around px-6 pb-[env(safe-area-inset-bottom,20px)] shrink-0 z-30 shadow-md">
+                {/* EXPLORE TAB */}
                 <button 
                   onClick={() => {
                     setActiveTab("home");
                     setScreen("feed");
                   }}
-                  className="flex flex-col items-center justify-center p-3 text-center cursor-pointer transition-all duration-200 hover:scale-105 active:scale-95"
-                  title="Home"
+                  className="flex flex-col items-center justify-center p-3 text-center cursor-pointer transition-all duration-200 hover:scale-110 active:scale-90"
+                  title="Explore"
                 >
-                  <Home className={`w-6 h-6 transition-colors duration-200 ${activeTab === "home" ? "text-accent stroke-[2.25px]" : "text-zinc-400 stroke-[1.75px]"}`} />
+                  <Compass className={`w-[26px] h-[26px] transition-all duration-250 ${activeTab === "home" ? "text-accent stroke-[2.5px] scale-105" : "text-zinc-400 stroke-[1.5px]"}`} />
                 </button>
 
-                <div className="flex items-center justify-center">
-                  <button 
-                    onClick={() => {
-                      setActiveTab("generate");
-                      setScreen("feed");
-                    }}
-                    className={`flex items-center justify-center rounded-full shadow-md transition-all duration-200 cursor-pointer active:scale-95 ${
-                      activeTab === "generate" 
-                        ? "bg-gradient-to-tr from-[#2B00EB] to-[#1E1B4B] w-12 h-12 shadow-lg brightness-110 border border-zinc-950/25" 
-                        : "bg-gradient-to-tr from-[#2B00EB] to-[#5a38ff] w-12 h-12 hover:scale-105"
-                    }`}
-                    title="Generate Spec"
-                  >
-                    <Sparkles className="w-5 h-5 text-white stroke-[1.85px]" />
-                  </button>
-                </div>
+                {/* GENERATE TAB */}
+                <button 
+                  onClick={() => {
+                    setActiveTab("generate");
+                    setScreen("feed");
+                  }}
+                  className="flex flex-col items-center justify-center p-3 text-center cursor-pointer transition-all duration-200 hover:scale-110 active:scale-90"
+                  title="Generate"
+                >
+                  <Sparkles className={`w-[26px] h-[26px] transition-all duration-250 ${activeTab === "generate" ? "text-accent stroke-[2.5px]" : "text-zinc-400 stroke-[1.5px]"}`} />
+                </button>
 
+                {/* BOARDS / SAVED TAB */}
                 <button 
                   onClick={() => {
                     setActiveTab("saved");
                     setScreen("feed");
                   }}
-                  className="flex flex-col items-center justify-center p-3 text-center cursor-pointer transition-all duration-200 hover:scale-105 active:scale-95"
-                  title="Pinned"
+                  className="flex flex-col items-center justify-center p-3 text-center cursor-pointer transition-all duration-200 hover:scale-110 active:scale-90"
+                  title="Boards"
                 >
-                  <Pin className={`w-6 h-6 rotate-45 transition-colors duration-200 ${activeTab === "saved" ? "text-accent stroke-[2.25px]" : "text-zinc-400 stroke-[1.75px]"}`} />
+                  <Pin className={`w-[26px] h-[26px] rotate-45 transition-all duration-250 ${activeTab === "saved" ? "text-accent stroke-[2.5px] scale-105" : "text-zinc-400 stroke-[1.5px]"}`} />
                 </button>
               </div>
 
